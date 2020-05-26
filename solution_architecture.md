@@ -61,18 +61,18 @@ This preexisting process for the processing of lab results includes that the doc
 The flow for using the app is as follows, referencing the steps from *Figure 2*:
 
 - **Step 1:** Users of the Corona-Warn-App (i.e. broadcasting and collecting RPIs)
-	- (1) When a test is conducted, they receive an information flyer with a custom QR code. The code is either created on-site or is already available as a stack of pre-printed QR codes. The QR code contains a globally unique identifier (GUID).
-	- (2) Optionally, they can scan the QR code with the Corona-Warn-App (*Figure 3*, step 1) – if users decide against using the test retrieval functionality of the Corona-Warn-App, they still receive their test results through the regular channels explained before.
-	- (3) When the code is scanned, a web service call (REST) is placed against the Verification Server (*Figure 3*, step 2), linking the phone with the data from the QR code through a registration token, which is generated on the server  (*Figure 3*, step 3) and stored on the phone  (*Figure 3*, step 4).
+  - (1) When a test is conducted, they receive an information flyer with a custom QR code. The code is either created on-site or is already available as a stack of pre-printed QR codes. The QR code contains a globally unique identifier (GUID).
+  - (2) Optionally, they can scan the QR code with the Corona-Warn-App (*Figure 3*, step 1) – if users decide against using the test retrieval functionality of the Corona-Warn-App, they still receive their test results through the regular channels explained before.
+  - (3) When the code is scanned, a web service call (REST) is placed against the Verification Server (*Figure 3*, step 2), linking the phone with the data from the QR code through a registration token, which is generated on the server  (*Figure 3*, step 3) and stored on the phone  (*Figure 3*, step 4).
 - **Step 2:** The samples are transported to the lab (together with a “Probenbegleitschein”, which has a machine-readable QR code on it, as well as multiple other barcodes (lab ID, sample IDs).
 - **Step 3:** As soon as the test result is available (i.e. the samples have been processed), the software running locally in the lab (lab client) transmits the test result to the Laboratory Information System, together with the GUID from the QR code. The Laboratory Information System hashes the GUID and the test result. It is made available to the Verification Server through a REST interface.
 - **Step 4a:** After signing up for notifications in step 1, the user’s phone regularly checks the Verification Server for available test results (polling, figure 3, steps 5-8). This way, no external push servers need to be used. If results are available, the user is informed about the availability of information and only after opening the app, the result is displayed, together with recommendations for further actions (see scoping document for more details).
 - In case the test returned a positive result, users are asked to upload their keys to allow others to find out that they were exposed. If the users agree, the app retrieves a short-lived token (TAN) from the Verification Server (see also *Figure 3*, steps 9-11). The TAN is uploaded together with the diagnosis keys of up to the last 14 days to the Corona-Warn-App Server (*Figure 3*, step 12).
 - The Corona-Warn-App Server uses the TAN to verify the authenticity (*Figure 3*, steps 13-15) of the submission with the Verification Server.
-	- The TAN is consumed by the Verification Server and becomes invalid (*Figure 3*, step 14)
-	- If the Corona-Warn-App Server receives a positive confirmation, the uploaded diagnosis keys are stored in the database (*Figure 3*, step 16).
-	- The TAN is never persisted on the Corona-Warn-App Server.
-	- In case of a failing request, the device receives corresponding feedback to make the user aware that the data needs to be re-submitted.
+  - The TAN is consumed by the Verification Server and becomes invalid (*Figure 3*, step 14)
+  - If the Corona-Warn-App Server receives a positive confirmation, the uploaded diagnosis keys are stored in the database (*Figure 3*, step 16).
+  - The TAN is never persisted on the Corona-Warn-App Server.
+  - In case of a failing request, the device receives corresponding feedback to make the user aware that the data needs to be re-submitted.
 
 ![Figure 3: Data flow for the verification process](images/solution_architecture/figure_3.svg "Figure 3: Data flow for the verification process")
 
@@ -104,16 +104,16 @@ As of now, two uploads are required from the same phone (past diagnosis keys and
 
 The Corona-Warn-App Server needs to fulfill the following tasks:
 - Accept upload requests from clients
-	- Verify association with a positive test through the Verification Server and the associated workflow (explained in the chapter “Retrieval of lab results and verification process”, shown in the center of the left side of *Figure 6*).
-	- Accept uploaded diagnosis keys and store them (optional) together with the corresponding transmission risk level parameter (integer value of 1-8) into the database. Note that the transport of metadata (e.g. IP) of the incoming connections for the upload of diagnosis keys is removed in a dedicated actor, labelled “Transport Metadata Removal” in *Figure 6*.
+  - Verify association with a positive test through the Verification Server and the associated workflow (explained in the chapter “Retrieval of lab results and verification process”, shown in the center of the left side of *Figure 6*).
+  - Accept uploaded diagnosis keys and store them (optional) together with the corresponding transmission risk level parameter (integer value of 1-8) into the database. Note that the transport of metadata (e.g. IP) of the incoming connections for the upload of diagnosis keys is removed in a dedicated actor, labelled “Transport Metadata Removal” in *Figure 6*.
 - Provide [configuration parameters](#data-format) to the mobile applications
-	- Threshold values for [attenuation buckets](#attenuation-buckets)
-	- Risk scores for defined values
-	- Threshold values for risk categories and alerts
+  - Threshold values for [attenuation buckets](#attenuation-buckets)
+  - Risk scores for defined values
+  - Threshold values for risk categories and alerts
 - On a regular schedule (e.g. hourly)
-	- Assemble diagnosis keys into chunks for a given time period
-	- Store chunks as static files (in protocol buffers, compatible with format specified by Apple/Google)
-	- Transfer files to a storage service (shown at the bottom of *Figure 6*), which acts as a source for the Content Delivery Network (CDN)
+  - Assemble diagnosis keys into chunks for a given time period
+  - Store chunks as static files (in protocol buffers, compatible with format specified by Apple/Google)
+  - Transfer files to a storage service (shown at the bottom of *Figure 6*), which acts as a source for the Content Delivery Network (CDN)
 
 Those tasks are visualized in *Figure 7*. Each of swim lanes (vertical sections of the diagram) on the left side (Phone 1, Phone 2, Phone n) represent one device with the Corona-Warn-App installed. The user of Phone 1 has taken a SARS-CoV-2 test (which comes back positive later). The users of Phone 2 and Phone n only use the functionality to trace potential exposure.
 The Corona-Warn-App Server represents the outside picture of the individual service working in the backend. For a better understanding, the database has been visualized separately.
@@ -140,10 +140,10 @@ The server will make the following information available through a RESTful inter
 - available items through index endpoints (not all implemented in first iteration)
 - the newly added Diagnosis Keys (Temporary Exposure Keys) for the time frame
 - configuration parameters
-	- 32 parameters for configuring the risk score of the Apple/Google Exposure Notification Framework
-	- [Attenuation bucket](#attenuation-buckets) thresholds
-	- Risk score threshold to issue a warning
-	- Risk score ranges for individual risk levels
+  - 32 parameters for configuring the risk score of the Apple/Google Exposure Notification Framework
+  - [Attenuation bucket](#attenuation-buckets) thresholds
+  - Risk score threshold to issue a warning
+  - Risk score ranges for individual risk levels
 
 Return data needs to be signed and will contain a timestamp (please refer to protocol buffer files for further information). Using index endpoints will not increase the number of requests, as they can be handled within a single HTTP session. In case the hourly endpoint does not hold diagnosis keys for the selected hour, the mobile application does not need to download it. If, on the other hand multiple files need to be downloaded (e.g. because the client was switched off overnight), they can be handled in a single session as well.
 
@@ -180,12 +180,12 @@ The encapsulation especially applies to the part where matches are calculated, a
 ![Figure 11: Key flow from the receiving perspective (as described in the specification by Apple/Google)](images/solution_architecture/figure_11.svg "Figure 11: Key flow from the receiving perspective (as described in the specification by Apple/Google)")
 
 [Information provided from the framework API to the app per exposure](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ExposureNotification-FrameworkDocumentationv1.2.pdf):
--	**Attenuation value** (Reported Transmit Power - Measured RSSI)
--	**Attenuation “buckets”**, i.e. times spent within certain attenuation ranges (see below)
--	**Date** when the exposure occurred (with reduced precision, i.e. one day)
--	**Duration** of the exposure (<5/5/10/15/20/25/30/>30 minutes)
--	**Transmission risk level** associated with diagnosis key of other person (downloaded from server, together with diagnosis key)
--	**Total Risk Score** calculated exposure risk level (with a range from 0-4096) according to the defined parameters
+- **Attenuation value** (Reported Transmit Power - Measured RSSI)
+- **Attenuation “buckets”**, i.e. times spent within certain attenuation ranges (see below)
+- **Date** when the exposure occurred (with reduced precision, i.e. one day)
+- **Duration** of the exposure (<5/5/10/15/20/25/30/>30 minutes)
+- **Transmission risk level** associated with diagnosis key of other person (downloaded from server, together with diagnosis key)
+- **Total Risk Score** calculated exposure risk level (with a range from 0-4096) according to the defined parameters
 
 ### Attenuation Buckets
 
