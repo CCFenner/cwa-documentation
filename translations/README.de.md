@@ -59,7 +59,7 @@ Copyright (c) 2020 Deutsche Telekom AG und SAP SE oder ein SAP-Konzernunternehme
 
 Lizenziert unter **Apache-Lizenz, Version 2.0** (die "Lizenz"). Sie dürfen diese Datei ausschließlich im Einklang mit der Lizenz verwenden.
 
-Eine Kopie der Lizenz erhalten Sie unter https://www.apache.org/licenses/LICENSE-2.0.
+Eine Kopie der Lizenz erhalten Sie unter <https://www.apache.org/licenses/LICENSE-2.0>.
 
 Sofern nicht durch anwendbares Recht gefordert oder schriftlich vereinbart, wird jede unter der Lizenz bereitgestellte Software „OHNE MÄNGELGEWÄHR“ UND OHNE AUSDRÜCKLICHE ODER STILLSCHWEIGENDE GARANTIE JEGLICHER ART bereitgestellt. Die genauen Angaben zu Genehmigungen und Einschränkungen unter der Lizenz finden Sie in der [LIZENZ](../LICENSE).
 
