@@ -4,7 +4,7 @@
 
 <hr />
 <p align="center">
-    <a href="#über-dieses-projekt">Über dieses Projekt</a> • 
+    <a href="#über-dieses-projekt">Über dieses Projekt</a> •
     <a href="#wer-wir-sind">Wer wir sind</a> •
     <a href="#danksagungen">Danksagungen</a> •
     <a href="#datenschutz">Datenschutz</a> •

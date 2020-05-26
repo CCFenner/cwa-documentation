@@ -4,7 +4,7 @@
 
 <hr />
 <p align="center">
-    <a href="#about-this-project">About this Project</a> • 
+    <a href="#about-this-project">About this Project</a> •
     <a href="#who-we-are">Who We Are</a> •
     <a href="#credits">Credits</a> •
     <a href="#data-privacy">Data Privacy</a> •
@@ -53,7 +53,7 @@ The project scope has been agreed on jointly by Deutsche Telekom AG and SAP SE a
 - [Corona-Warn-App - Scoping Document](scoping_document.md)
 
 ### Technical Documentation
-The technical documents are intended for a technical audience and represent the most recent state of the architecture. The solution architecture and concepts might change over time as external dependencies (e.g. the framework provided by Apple/Google) are still changing and new requirements need to be included or existing ones change. We appreciate feedback to all elements of these technical documents. 
+The technical documents are intended for a technical audience and represent the most recent state of the architecture. The solution architecture and concepts might change over time as external dependencies (e.g. the framework provided by Apple/Google) are still changing and new requirements need to be included or existing ones change. We appreciate feedback to all elements of these technical documents.
 
 * [Corona-Warn-App - Solution Architecture](solution_architecture.md)
 * [Corona-Warn-App Server Architecture](https://github.com/corona-warn-app/cwa-server/blob/master/docs/architecture-overview.md)
@@ -73,7 +73,7 @@ For an easier understanding of the used acronyms and special terms in our docume
 
 Copyright (c) 2020 Deutsche Telekom AG and SAP SE or an SAP affiliate company.
 
-Licensed under the **Apache License, Version 2.0** (the "License"); you may not use this file except in compliance with the License. 
+Licensed under the **Apache License, Version 2.0** (the "License"); you may not use this file except in compliance with the License.
 
 You may obtain a copy of the License at https://www.apache.org/licenses/LICENSE-2.0.
 
