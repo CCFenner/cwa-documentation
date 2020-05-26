@@ -1,4 +1,5 @@
 # INHALTSVERZEICHNIS
+
 1.  [EINLEITUNG](#einleitung)
 2.  [USER JOURNEY](#user-journey)
     1.  [Beschreibung der Nutzungsprofile (Stakeholder)](#beschreibung-der-nutzungsprofile-stakeholder)
@@ -20,6 +21,7 @@
 HINWEIS: Dieses Scoping-Dokument ist auch [auf Englisch](../scoping_document.md) verfügbar.
 
 # EINLEITUNG
+
 Ziel der Corona-Warn-App ist es, SARS-CoV-2-Infektionsketten schnellstmöglich zu erkennen und zu durchbrechen. Personen sollen zuverlässig und schnell über Begegnungen mit anderen infizierten Personen und damit mögliche Übertragungen des Virus informiert werden, damit sie sich freiwillig isolieren können, um damit zu einer Eindämmung der SARS-CoV-2-Pandemie beizutragen.
 
 Dieses Dokument beschreibt die funktionalen Anforderungen an die Gestaltung der App aus einer fachlichen und prozessualen Sicht. Die Beschreibung ist in der aktuellen Version inhaltlich auf das erste Release begrenzt und eine initiale Version.
@@ -33,30 +35,38 @@ Anhand einer User Journey (Nutzungsreise) sind die Interaktionspunkte und das Er
 # USER JOURNEY
 
 ## Beschreibung der Nutzungsprofile (Stakeholder)
+
 Folgende wesentliche Nutzungsprofile bzw. Stakeholder sind in die User Journey bzw. in den Gesamtprozess eingebunden und in ihrer Rolle beschrieben:
 
 #### App-Bedienung
+
 Alle Personen, welche die App benutzen: Werden über mögliche Begegnungen mit infizierten Personen informiert, verifizieren eigene Testergebnisse bzw. warnen dann alle Personen, denen sie begegnet sind, freiwillig und pseudonym.
 
 #### Hotlines
+
 Unterstützen Personen bei der Bedienung der App in der Beantwortung von Fragestellungen zur Nutzung der App, zur Technik sowie zum Datenschutz und geben auf Nachfrage verhaltensbezogene Informationen sowie weitere Informationsmöglichkeiten im Kontakt- bzw. Infektionsfall weiter.
 Unterstützen bei Verifikation und Freischaltung von Testergebnissen in der App für infizierte Personen und können diesen die Kontaktaufnahme mit dem zuständigen Gesundheitsamt empfehlen.
 
 #### Robert Koch-Institut (RKI)
+
 Stellt epidemiologische Informationen und Handlungsempfehlungen für die Bedienung der App zur Verfügung (Content). Bestimmt die Parameter für die Messung der Kontakte (im Rahmen der technischen Möglichkeiten durch die API).
 
 ## User Journey
+
 Die Nutzung der App wird aufgrund von nacheinander stattfindenden Kontakt-Ereignissen und Interaktionen von Personen in verschiedene Phasen eingeteilt. Zu jeder Phase sind den Personen Motivationen oder Anforderungen zugeordnet, die ihre Erwartungen an die Funktionsweise erfüllen und intuitiv durch den Prozess leiten.
 
 ![Abbildung 5: User Journey](user_journey.de.png "User Journey")
 
 #### Phase *Idee*
+
 In dieser Phase entscheidet eine Person, sich über die App zu informieren. Das kann über unterschiedliche Quellen erfolgen. In dieser Phase haben die Personen ggf. verschiedene Fragestellungen zur Nutzung der App (Anwendung, Datenschutz, Barrierefreiheit etc.). Diese sollen bereits vor dem Download beantwortet werden können (Hotline, Informationen auf Internetseiten des RKI und des BMG, App Store/Google Play Store).
 
 #### Phase *Installation*
+
 Eine Person entscheidet sich zum Download der App (App Store/Google Play Store) und wird nach der technischen Installation beim erstmaligen Öffnen der App durch eine Einführung begleitet. In der Einführungsphase erhält die Person eine Übersicht über die Funktionsweise, Nutzungsbedingungen und Datenschutzbestimmungen sowie erforderliche Einwilligungen, Einstellungen und Benachrichtigungen.
 
 #### Phase *Anwendung*
+
 Die Phase der Anwendung ist in vier weitere Bereiche unterteilt, in welchen die Person unterschiedliche Bedürfnisse hat.
 
 1. **Hintergrund**
@@ -76,13 +86,17 @@ Die Phase der Anwendung ist in vier weitere Bereiche unterteilt, in welchen die 
    Im Fall eines positiven SARS-CoV-2-Befunds kann eine Person freiwillig die in der App gespeicherten eigenen pseudonymen Warn-IDs veröffentlichen, damit andere Personen, die die App nutzen, auf ihrem eigenen Smartphone abgleichen können, ob sie mit der infizierten Person in Kontakt standen.
 
 #### Phase *Deinstallation*
+
 Eine Person kann die App jederzeit deinstallieren. Alle in der App gespeicherten Daten werden vollständig gelöscht.
 
 # FUNKTIONSBESCHREIBUNG
+
 ## Übersicht der Epics
+
 Die Funktionen der Applikation sind in Prozessphasen der Nutzung (mit direktem Bezug zur User Journey) und übergreifende Unterstützungsprozesse unterteilt. Eine Übersicht der Epics ist nachfolgend dargestellt:
 
 #### Prozessphasen der Nutzung
+
 | #  |   Epic | Beschreibung |
 |---:|--------|--------------|
 |  1 | Anbahnung und Installation (Onboarding-Prozess) | Sämtliche Prozesse, die insbesondere bei erstmaliger Nutzung der Applikation erfolgen (z.B. Zustimmung Datenschutz, Sprachauswahl)
@@ -93,6 +107,7 @@ Die Funktionen der Applikation sind in Prozessphasen der Nutzung (mit direktem B
 |  6 | Auslösung einer Warnung | Prozess zur Auslösung einer Warnung im Falle eines positiven Testergebnisses
 
 #### Supportprozesse
+
 | #  |   Epic | Beschreibung |
 |---:|--------|--------------|
 |  7 | Parametrisierung | Parameter der Kontaktpunktdefinition
@@ -101,6 +116,7 @@ Die Funktionen der Applikation sind in Prozessphasen der Nutzung (mit direktem B
 | 10 | Content-Management | Zur Anpassung und Aktualisierung von Inhalten in der Applikation (Texte, Links, Hotlines etc.)
 
 ## Übersicht der User Stories
+
 Die Anforderungen an die Corona-Warn-App, die den fachlichen Umfang der Anwendung definieren, sind nachfolgend in der üblichen Form aus Sicht der nutzenden Personen formuliert, sofern nicht anders angegeben:
 
 _„Als \<Stakeholder> möchte ich <Handlung durchführen>, um <gewünschtes Ergebnis zu erzielen>.“_
@@ -108,6 +124,7 @@ _„Als \<Stakeholder> möchte ich <Handlung durchführen>, um <gewünschtes Erg
 Die zugehörigen Akzeptanzkriterien ergänzen die Spezifikation der Anforderungen, indem sie Bedingungen definieren, die die Software erfüllen muss, um die Bedürfnisse der nutzenden Personen zu befriedigen.
 
 ### Anbahnung und Installation (Onboarding-Prozess)
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E01.01          | Bei der Nutzung der App möchte ich beim erstmaligen Start der Applikation eine Einleitung zur Funktionsweise der Applikation erhalten (App-Motivation). | 1. Einführung in die Funktionsweise der App wird bei erstmaligem Start der Applikation angezeigt. <hr/> 2. Einführung in die Funktionsweise der App wird bei weiteren Startvorgängen nicht angezeigt. <hr/> 3. Die erklärenden Inhalte sind in den jeweiligen Funktionsbereichen zur Nutzung vorhanden.
@@ -119,6 +136,7 @@ Die zugehörigen Akzeptanzkriterien ergänzen die Spezifikation der Anforderunge
 | E01.07          | Bei der Nutzung der App möchte ich bereits während des Onboardings Hilfen und Einstellungen zur Barrierefreiheit bekommen, um die App nutzen zu können. | 1. Die Barrierefreiheit wird im Rahmen der Möglichkeiten der Version des jeweils hinterlegten Betriebssystems verfügbar gemacht.
 
 ### Informationen und Instruktionen zur Nutzung der Applikation
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E02.01          | Bei der Nutzung der App möchte ich Zugriff auf eine FAQ-Liste haben, um mir bei Fragen zur Applikation selbst weiterhelfen zu können. | 1. Ein Link auf eine Internetseite mit FAQs ist im Applikationsmenü hinterlegt.
@@ -129,6 +147,7 @@ Die zugehörigen Akzeptanzkriterien ergänzen die Spezifikation der Anforderunge
 | E02.06          | Bei der Nutzung der App möchte ich die verschiedenen Hotlines zu technischen, datenschutzbezogenen, gesundheitsbezogenen und psychologischen Fragestellungen sowie zur Verifikation eines Testergebnisses angezeigt bekommen, damit ich weitere Informationen erhalte oder Fragen beantwortet bekomme. | 1. Die App bietet einfachen Zugriff auf die Telefonnummern der Hotlines (für technische, datenschutzbezogene, gesundheitsbezogene und psychologische Fragestellungen). <hr/> 2. Die zeitliche Erreichbarkeit der Hotlines (z.B. 24/7) wird angezeigt. <hr/> 3. Telefonnummern können direkt aus der App gewählt werden.
 
 ### Nutzung im Regelprozess
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E03.01          | Bei der Nutzung der App möchte ich die Applikation aktivieren und deaktivieren können, um die Funktion ein- und auszuschalten. | 1. Eine Umschaltfläche schaltet die Funktion (Bluetooth im Hintergrund und Hash-Generierung) ein und aus. <hr/> 2. Die Konsequenzen des Ein-/Ausschaltens werden erklärt.
@@ -136,18 +155,21 @@ Die zugehörigen Akzeptanzkriterien ergänzen die Spezifikation der Anforderunge
 | E03.03          | Bei der Nutzung der App möchte ich die Applikationseinstellungen (Zugriffsrechte, z.B. Bluetooth, Benachrichtigungen) in einem Menü anpassen können, um Funktion und Zugriffe der Applikation verwalten zu können. | 1. Ein Menü zu Applikationseinstellungen kann durch die nutzende Person aufgerufen werden. <hr/> 2. Die Benachrichtigungen können ein- und ausgeschaltet werden. <hr/> 3. Die Zugriffsrechte der Applikation auf Bluetooth können durch die Person erteilt und entzogen werden. <hr/> 4. Vor Deaktivierung der Zugriffsrechte erhalte ich Informationen darüber, welche Funktionen der App dadurch nicht mehr (vollumfänglich) funktionieren.
 
 ### Kontaktfall (Begegnung mit infizierter Person)
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E04.01          | Bei der Nutzung der App möchte ich informiert werden, wenn eine Person, zu der ich Kontakt hatte, sich als infiziert gemeldet hat. Damit kann ich geeignete Maßnahmen treffen, um die Verbreitung des Virus zu stoppen. | 1. Eine Notifikation durch die Applikation wird an die möglicherweise betroffene Person verschickt. <hr/> 2. Die Notifikation informiert die möglicherweise betroffene Person über eine Risikoänderung (abhängig von der zur Verfügung gestellten API-Funktion).
 | E04.02          | Bei der Nutzung der App möchte ich im Kontaktfall Handlungsanweisungen durch die Applikation bekommen, um mein Verhalten an die Empfehlungen des RKI anzupassen. | 1. Die Notifikation führt zu hinterlegten Handlungsempfehlungen für den Kontaktfall.
 
 ### Covid-19-Testergebnismeldung
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E05.01          | Als RKI möchte ich, dass ausschließlich positiv getestete Personen einmalig eine Warnung auslösen können, um Missbrauch zu vermeiden. | 1. Nur positive Tests können eine Warnung auslösen. <hr/> 2. Für jeden Test kann nur einmal eine Warnung ausgelöst werden.
 | E05.02          | Bei der Nutzung der App möchte ich im Falle eines positiven Testergebnisses Informationen über die Erkrankung und nötige nächste Schritte bekommen, um mein Verhalten an die Handlungsempfehlungen des RKI anpassen zu können. | 1. Eine Benachrichtigung über den Eingang des Testergebnisses wird angezeigt. <hr/> 2. In der App wird ein Infotext mit definiertem Inhalt angezeigt (z.B. Informationen zum Ausgang des Testergebnisses, Informationen über erforderliche Maßnahmen, eine Hotline-Nummer).
 
 ### Auslösen einer Warnung
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E06.01          | Bei der Nutzung der App möchte ich einen vom medizinischen Fachpersonal oder Test-Center ausgehändigten QR-Code scannen können, damit mir später das Testergebnis in der Warn-App zur Verfügung gestellt werden kann. | 1. Ein auf dem Flyer des medizinischen Fachpersonals oder Test-Centers vorhandener QR-Code kann mit der Warn-App gescannt werden. <hr/> 2. Erklärungstext wird angezeigt.
@@ -158,16 +180,19 @@ Die zugehörigen Akzeptanzkriterien ergänzen die Spezifikation der Anforderunge
 | E06.06          | Bei der Nutzung der App möchte ich, dass ich nach der Verifikation der TAN meine pseudonymen IDs freiwillig teilen und etwaige Kontaktpersonen warnen kann. | 1. IDs können pseudonymisiert an den Warn-Server übermittelt werden. <hr/> 2. Die Übermittlung ist nur möglich, sofern zuvor eine Verifikation erfolgreich durchgeführt wurde. <hr/> 3. Die Übermittlung ist nur möglich, sofern die Person vorher zugestimmt hat.
 
 ### Parametrisierung
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E07.01          | Als RKI möchte ich die Parameter zur Risiko-Score-Bestimmung (im Rahmen der technischen Möglichkeiten durch die API) einstellen können, um stets den aktuellen Forschungsergebnissen zur Virusübertragung zu entsprechen. | 1. In Abhängigkeit von der bereitgestellten API können Schwellenwerte konfiguriert werden. <hr/> 2. Die Anpassung wird auf den Endgeräten vorgenommen, ohne dass ein Update der App erforderlich ist.
 
 ### Technische Unterstützung
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E08.01          | Bei der Nutzung der App möchte ich eine Hotline kontaktieren können, um technische Probleme mit der Applikation zu lösen. | 1. Die Telefonnummer der technischen Hotline ist in der Applikation hinterlegt.
 
 ### Barrierefreiheit
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E09.01          | Bei der Nutzung der App möchte ich eine Sprachausgabe nutzen können, um die Applikation (z.B. bei fehlendem oder eingeschränktem Sehvermögen) nutzen zu können. | 1. Die Barrierefreiheit bzgl. Sprachausgabe wird im Rahmen der Möglichkeiten der Version des jeweils hinterlegten Betriebssystems verfügbar gemacht.
@@ -175,6 +200,7 @@ Die zugehörigen Akzeptanzkriterien ergänzen die Spezifikation der Anforderunge
 | E09.03          | Bei der Nutzung der App möchte ich, dass mir die Inhalte in einfacher Sprache zur Verfügung gestellt werden, damit ich leicht verstehe, wie ich die App nutzen kann und warum ich es tun sollte. | 1. Die Barrierefreiheit wird im Rahmen des Content-Managements berücksichtigt.
 
 ### Content Management
+
 | # User Story ID | User Story | Akzeptanzkriterien |
 |-----------------|------------|--------------------|
 | E10.01          | Als RKI möchte ich die Inhalte der Applikation zentral verwalten, um Aktualisierungen von Texten, Links, Hotlines etc. einmalig für alle Stellen in der App durchführen zu können. | 1. Das Content-Management erfolgt auf Grundlage der Anforderungen des RKI <hr/> 2. Der Content wird auf statische und dynamische Inhalte entsprechend der technischen Machbarkeit differenziert <hr/> 3. Aktualisierungen erfolgen in der ersten Version über ein App-Update.

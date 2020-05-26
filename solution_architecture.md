@@ -11,6 +11,7 @@ Assuming a close association of a mobile phone and its user, we equate the devic
 ![Corona-Warn-App Components](images/solution_architecture/CWA_Components.png "Corona-Warn-App Components")
 
 ## TABLE OF CONTENTS
+
 1. [INTRODUCTION](#introduction)
    1. [Retrieval of lab results and verification process](#retrieval-of-lab-results-and-verification-process)
    2. [Upload schedule for Diagnosis Keys](#upload-schedule-for-diagnosis-keys)
