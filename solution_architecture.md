@@ -26,7 +26,6 @@ Assuming a close association of a mobile phone and its user, we equate the devic
 5. [CROSS-BORDER INTEROPERABILITY](#cross-border-interoperability)
 6. [LIMITATIONS](#limitations)
 
-
 ## INTRODUCTION
 
 To reduce the spread of [COVID-19](https://www.ecdc.europa.eu/en/covid-19-pandemic) it is necessary to inform people about their close proximity to positively tested individuals. So far, health departments and affected individuals identified these in personal dialogues based on people’s memory, which led to a high number of unknown connections, e.g. when using public transport.
