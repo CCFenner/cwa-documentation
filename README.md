@@ -52,6 +52,7 @@ This repository contains the developer documentation and related content.
 ### Project Scope
 
 The project scope has been agreed on jointly by Deutsche Telekom AG and SAP SE as contractors and the German Federal Government and the Robert-Koch-Institut as clients. The project scope might change over time as new requirements need to be included or existing ones change. We appreciate feedback to all elements of this project scope document. However, additional features or any other content changes beyond fixes to grammatical issues or typos need to be aligned on by these partners before they can be included in the document. Thank you for your understanding!
+
 - [Corona-Warn-App - Scoping Document](scoping_document.md)
 
 ### Technical Documentation
@@ -63,6 +64,7 @@ The technical documents are intended for a technical audience and represent the 
 * [Corona-Warn-App Verification Server Software Design](https://github.com/corona-warn-app/cwa-verification-server/blob/master/docs/architecture-overview.md)
 
 To be published:
+
 * Corona-Warn-App - Mobile Architecture for iOS and Android
 * Portal Server Architecture
 * System Operation

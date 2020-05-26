@@ -49,6 +49,7 @@ They only have to confirm to the app and the Exposure Notification Framework tha
 
 Reporting positive tests to the app is crucial for others to get informed about a relevant exposure and potential infection. However, a verification before the upload of any diagnosis keys is required in order to prevent misuse.
 There are two ways for receiving this verification:
+
 1. Use of the integrated functionality of the Corona-Warn-App to retrieve the results of a SARS-CoV-2 test from a verification server (see Figure 2, Step 4a). Through this integration, the positive test result is already verified, and the diagnosis keys can be uploaded right after users have given their consent.
 2. Use of a human-readable token (e.g. a number or a combination of words) and provide this as verification to the app. This token is called teleTAN (see Figure 2, Step 4b).
 
@@ -103,6 +104,7 @@ As of now, two uploads are required from the same phone (past diagnosis keys and
 ![Figure 6: Actors in the system, including external parties (blue components to be open-sourced)](images/solution_architecture/figure_6.svg "Figure 6: Actors in the system, including external parties (blue components to be open-sourced)")
 
 The Corona-Warn-App Server needs to fulfill the following tasks:
+
 - Accept upload requests from clients
   - Verify association with a positive test through the Verification Server and the associated workflow (explained in the chapter “Retrieval of lab results and verification process”, shown in the center of the left side of *Figure 6*).
   - Accept uploaded diagnosis keys and store them (optional) together with the corresponding transmission risk level parameter (integer value of 1-8) into the database. Note that the transport of metadata (e.g. IP) of the incoming connections for the upload of diagnosis keys is removed in a dedicated actor, labelled “Transport Metadata Removal” in *Figure 6*.
@@ -137,6 +139,7 @@ Further information can be found in the dedicated architecture documents for the
 The current base unit for data chunks will be one hour. Data will be encoded in the protocol buffer format, as specified by Apple/Google (see *Figure 8*). It is planned, that in case a data chunk does not hold any or too little diagnosis keys, the chunk generation will be skipped.
 
 The server will make the following information available through a RESTful interface:
+
 - available items through index endpoints (not all implemented in first iteration)
 - the newly added Diagnosis Keys (Temporary Exposure Keys) for the time frame
 - configuration parameters
@@ -180,6 +183,7 @@ The encapsulation especially applies to the part where matches are calculated, a
 ![Figure 11: Key flow from the receiving perspective (as described in the specification by Apple/Google)](images/solution_architecture/figure_11.svg "Figure 11: Key flow from the receiving perspective (as described in the specification by Apple/Google)")
 
 [Information provided from the framework API to the app per exposure](https://covid19-static.cdn-apple.com/applications/covid19/current/static/contact-tracing/pdf/ExposureNotification-FrameworkDocumentationv1.2.pdf):
+
 - **Attenuation value** (Reported Transmit Power - Measured RSSI)
 - **Attenuation “buckets”**, i.e. times spent within certain attenuation ranges (see below)
 - **Date** when the exposure occurred (with reduced precision, i.e. one day)
@@ -190,6 +194,7 @@ The encapsulation especially applies to the part where matches are calculated, a
 ### Attenuation Buckets
 
 Both, Apple and Google allow to define a low and a high threshold for the attenuation, forming three individual buckets:
+
 - attenuation < low threshold
 - low threshold <= attenuation < high threshold
 - high threshold <= attenuation
